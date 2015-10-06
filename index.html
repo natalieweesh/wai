@@ -32,10 +32,11 @@
 					console.log(data);
 					$.each(data['results'], function(key, val) {
 						if (val['types'].indexOf('neighborhood') != -1) {
-							console.log('ergh');
 							console.log(val['address_components'][0]['long_name']);
+							hood_names.push(val['address_components'][0]['long_name']);
 						}
 					});
+					x.append(hood_names);
 				});
 			
 			}
