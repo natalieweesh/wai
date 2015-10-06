@@ -27,16 +27,15 @@
 			}
 			function getHood() {
 				google_string = "https://maps.googleapis.com/maps/api/geocode/json?key=" + API_KEY + "&latlng=" + lat + "," + lng;
-				$.getJSON( google_string, function( data ) {
-					var items = [];
-					$.each( data, function( key, val ) {
-						items.push( "<li id='" + key + "'>" + val + "</li>" );
-					});
 
-					$( "<ul/>", {
-						"class": "my-new-list",
-						html: items.join( "" )
-					}).appendTo( "body" );
+				$.getJSON(google_string, function(data) {
+					console.log(data);
+					$.each(data['results'], function(key, val) {
+						if (val['types'].indexOf('neighborhood') != -1) {
+							console.log('ergh');
+							console.log(val['address_components'][0]['long_name']);
+						}
+					});
 				});
 			
 			}
