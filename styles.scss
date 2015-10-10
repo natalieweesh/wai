@@ -38,6 +38,10 @@ body, .result-overlay, .loader {
 		display: block;
 		content: "";
 		border-radius: 0 0 300px 300px;
+		-webkit-transform: rotate(-44deg);
+		-moz-transform: rotate(-44deg);
+		-ms-transform: rotate(-44deg);
+		-o-transform: rotate(-44deg);
 		transform: rotate(-44deg);
 		z-index: -1;
 	}
