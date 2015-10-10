@@ -41,7 +41,7 @@
 							hood_names.push(val['address_components'][0]['long_name']);
 						}
 					});
-					x.innerHTML = hood_names;
+					x.innerHTML = hood_names.join('/');
 					$('.result-overlay').addClass('visible');
 				});
 			
