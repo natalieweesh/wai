@@ -22,6 +22,7 @@
 					$('.loader').addClass('visible');
 				} else {
 					x.innerHTML = "Geolocation is not supported by this browser.";
+					$('.loader').removeClass('visible');
 					$('.result-overlay').addClass('visible');
 				}
 			}
@@ -45,11 +46,13 @@
 						}
 					});
 					x.innerHTML = hood_names.join('/');
+					$('.loader').removeClass('visible');
 					$('.result-overlay').addClass('visible');
 				});
 			
 			}
 			function showError(error) {
+				$('.loader').removeClass('visible');
 				$('.result-overlay').addClass('visible');
 				switch(error.code) {
 					case error.PERMISSION_DENIED:
