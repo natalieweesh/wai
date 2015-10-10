@@ -1,30 +1,32 @@
 <html>
 	<head>
 		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" src="styles.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	</head>
 	<body>
-		<h1>where am I?</h1>
-		<button id="push-me" onmousedown="getLocation();">get my location</button>
-		<div id="demo">
+		<button id="push-me" onmousedown="getLocation();">where am I?</button>
+		<div class="result-overlay">
+			<button onmousedown="$('.result-overlay').removeClass('visible');">x</button>
+			<div id="result"></div>
 		</div>
 		<script>
 			var API_KEY = "AIzaSyDynUEVQgjOxjDAnnqVZyTg_tDe-HxDvkY";
 			var lat, lng;
 			var hood_names = [];
-			var x = document.getElementById("demo");
+			var x = document.getElementById("result");
 			function getLocation() {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(showPosition, showError);
 				} else {
 					x.innerHTML = "Geolocation is not supported by this browser.";
+					$('.result-overlay').addClass('visible');
 				}
 			}
 			function showPosition(position) {
 				lat = position.coords.latitude;
 				lng = position.coords.longitude;
-				x.innerHTML = "Latitude: " + position.coords.latitude + 
+				//x.innerHTML = "Latitude: " + position.coords.latitude + 
 				"<br>Longitude: " + position.coords.longitude; 
 				getHood();
 			}
@@ -39,11 +41,13 @@
 							hood_names.push(val['address_components'][0]['long_name']);
 						}
 					});
-					$(x).append('<br>' + hood_names);
+					x.innerHTML = hood_names;
+					$('.result-overlay').addClass('visible');
 				});
 			
 			}
 			function showError(error) {
+				$('.result-overlay').addClass('visible');
 				switch(error.code) {
 					case error.PERMISSION_DENIED:
 						x.innerHTML = "User denied the request for Geolocation."
