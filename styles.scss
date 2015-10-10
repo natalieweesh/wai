@@ -9,6 +9,8 @@ body, button {
 	font-size: 1.5em;
 	text-transform: uppercase;
 	margin: 0;
+}
+body, .result-overlay, .loader {
 	overflow: hidden;
 }
 #push-me {

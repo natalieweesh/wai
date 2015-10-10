@@ -11,10 +11,14 @@ body, button {
   font-size: 1.5em;
   text-transform: uppercase;
   margin: 0;
+}
+
+/* line 13, styles.scss */
+body, .result-overlay, .loader {
   overflow: hidden;
 }
 
-/* line 14, styles.scss */
+/* line 16, styles.scss */
 #push-me {
   width: 300px;
   height: 300px;
@@ -28,11 +32,11 @@ body, button {
   border: 0;
   outline: 0;
 }
-/* line 26, styles.scss */
+/* line 28, styles.scss */
 #push-me:focus, #push-me:active {
   outline: 0;
 }
-/* line 29, styles.scss */
+/* line 31, styles.scss */
 #push-me:after {
   width: 299px;
   height: 150px;
@@ -46,17 +50,17 @@ body, button {
   transform: rotate(-44deg);
   z-index: -1;
 }
-/* line 42, styles.scss */
+/* line 44, styles.scss */
 #push-me:hover {
   margin-top: -135px;
   margin-left: -135px;
 }
-/* line 45, styles.scss */
+/* line 47, styles.scss */
 #push-me:hover:after {
   background: #fff;
 }
 
-/* line 50, styles.scss */
+/* line 52, styles.scss */
 .loader {
   z-index: 1;
   opacity: 0;
@@ -70,12 +74,12 @@ body, button {
   transition: opacity 0.5s;
   display: table;
 }
-/* line 62, styles.scss */
+/* line 64, styles.scss */
 .loader.visible {
   opacity: 0.5;
   pointer-events: initial;
 }
-/* line 66, styles.scss */
+/* line 68, styles.scss */
 .loader p {
   color: #fff;
   display: table-cell;
@@ -84,7 +88,7 @@ body, button {
   animation: spin 1s infinite;
 }
 
-/* line 74, styles.scss */
+/* line 76, styles.scss */
 .result-overlay {
   width: 100%;
   height: 100%;
@@ -96,12 +100,12 @@ body, button {
   transition: opacity 0.5s;
   display: table;
 }
-/* line 84, styles.scss */
+/* line 86, styles.scss */
 .result-overlay.visible {
   opacity: 1;
   pointer-events: initial;
 }
-/* line 88, styles.scss */
+/* line 90, styles.scss */
 .result-overlay button {
   top: 0;
   right: 0;
@@ -114,7 +118,7 @@ body, button {
   padding: 0 0.4em;
 }
 
-/* line 100, styles.scss */
+/* line 102, styles.scss */
 #result {
   display: table-cell;
   vertical-align: middle;
