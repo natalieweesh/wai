@@ -127,4 +127,5 @@ body, .result-overlay, .loader {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  width: 100%;
 }
