@@ -1,3 +1,9 @@
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 body, button {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: 1.5em;
@@ -38,6 +44,30 @@ body, button {
 		&:after {
 			background: #fff;	
 		}
+	}
+}
+.loader {
+	z-index: 1;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	transition: opacity 0.5s;
+	display: table;
+	&.visible {
+		opacity: 0.5;
+		pointer-events: initial;
+	}
+	p {
+		color: #fff;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		animation: spin 1s infinite;
 	}
 }
 .result-overlay {

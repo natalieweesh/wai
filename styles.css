@@ -1,4 +1,11 @@
-/* line 1, styles.scss */
+@keyframes spin {
+  /* line 2, styles.scss */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* line 7, styles.scss */
 body, button {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.5em;
@@ -6,7 +13,7 @@ body, button {
   margin: 0;
 }
 
-/* line 7, styles.scss */
+/* line 13, styles.scss */
 #push-me {
   width: 300px;
   height: 300px;
@@ -20,11 +27,11 @@ body, button {
   border: 0;
   outline: 0;
 }
-/* line 19, styles.scss */
+/* line 25, styles.scss */
 #push-me:focus, #push-me:active {
   outline: 0;
 }
-/* line 22, styles.scss */
+/* line 28, styles.scss */
 #push-me:after {
   width: 299px;
   height: 150px;
@@ -38,17 +45,45 @@ body, button {
   transform: rotate(-44deg);
   z-index: -1;
 }
-/* line 35, styles.scss */
+/* line 41, styles.scss */
 #push-me:hover {
   margin-top: -135px;
   margin-left: -135px;
 }
-/* line 38, styles.scss */
+/* line 44, styles.scss */
 #push-me:hover:after {
   background: #fff;
 }
 
-/* line 43, styles.scss */
+/* line 49, styles.scss */
+.loader {
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  display: table;
+}
+/* line 61, styles.scss */
+.loader.visible {
+  opacity: 0.5;
+  pointer-events: initial;
+}
+/* line 65, styles.scss */
+.loader p {
+  color: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  animation: spin 1s infinite;
+}
+
+/* line 73, styles.scss */
 .result-overlay {
   width: 100%;
   height: 100%;
@@ -60,12 +95,12 @@ body, button {
   transition: opacity 0.5s;
   display: table;
 }
-/* line 53, styles.scss */
+/* line 83, styles.scss */
 .result-overlay.visible {
   opacity: 1;
   pointer-events: initial;
 }
-/* line 57, styles.scss */
+/* line 87, styles.scss */
 .result-overlay button {
   top: 0;
   right: 0;
@@ -78,7 +113,7 @@ body, button {
   padding: 0 0.4em;
 }
 
-/* line 69, styles.scss */
+/* line 99, styles.scss */
 #result {
   display: table-cell;
   vertical-align: middle;

@@ -6,8 +6,9 @@
 	</head>
 	<body>
 		<button id="push-me" onmousedown="getLocation();">where am I?</button>
+		<div class="loader"><p>Searching...</p></div>
 		<div class="result-overlay">
-			<button onmousedown="$('.result-overlay').removeClass('visible');">x</button>
+			<button onmousedown="$('.result-overlay, .loader').removeClass('visible');">x</button>
 			<div id="result"></div>
 		</div>
 		<script>
@@ -18,6 +19,7 @@
 			function getLocation() {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(showPosition, showError);
+					$('.loader').addClass('visible');
 				} else {
 					x.innerHTML = "Geolocation is not supported by this browser.";
 					$('.result-overlay').addClass('visible');
@@ -31,6 +33,7 @@
 				getHood();
 			}
 			function getHood() {
+				hood_names = [];
 				google_string = "https://maps.googleapis.com/maps/api/geocode/json?key=" + API_KEY + "&latlng=" + lat + "," + lng;
 
 				$.getJSON(google_string, function(data) {
