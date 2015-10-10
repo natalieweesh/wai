@@ -1,11 +1,15 @@
 @keyframes spin {
   /* line 2, styles.scss */
   100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
-/* line 7, styles.scss */
+/* line 11, styles.scss */
 body, button {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.5em;
@@ -13,12 +17,12 @@ body, button {
   margin: 0;
 }
 
-/* line 13, styles.scss */
+/* line 17, styles.scss */
 body, .result-overlay, .loader {
   overflow: hidden;
 }
 
-/* line 16, styles.scss */
+/* line 20, styles.scss */
 #push-me {
   width: 300px;
   height: 300px;
@@ -32,11 +36,11 @@ body, .result-overlay, .loader {
   border: 0;
   outline: 0;
 }
-/* line 28, styles.scss */
+/* line 32, styles.scss */
 #push-me:focus, #push-me:active {
   outline: 0;
 }
-/* line 31, styles.scss */
+/* line 35, styles.scss */
 #push-me:after {
   width: 299px;
   height: 150px;
@@ -54,17 +58,17 @@ body, .result-overlay, .loader {
   transform: rotate(-44deg);
   z-index: -1;
 }
-/* line 48, styles.scss */
+/* line 52, styles.scss */
 #push-me:hover {
   margin-top: -135px;
   margin-left: -135px;
 }
-/* line 51, styles.scss */
+/* line 55, styles.scss */
 #push-me:hover:after {
   background: #fff;
 }
 
-/* line 56, styles.scss */
+/* line 60, styles.scss */
 .loader {
   z-index: 1;
   opacity: 0;
@@ -78,12 +82,12 @@ body, .result-overlay, .loader {
   transition: opacity 0.5s;
   display: table;
 }
-/* line 68, styles.scss */
+/* line 72, styles.scss */
 .loader.visible {
   opacity: 0.5;
   pointer-events: initial;
 }
-/* line 72, styles.scss */
+/* line 76, styles.scss */
 .loader p {
   color: #fff;
   display: table-cell;
@@ -92,7 +96,7 @@ body, .result-overlay, .loader {
   animation: spin 1s infinite;
 }
 
-/* line 80, styles.scss */
+/* line 84, styles.scss */
 .result-overlay {
   width: 100%;
   height: 100%;
@@ -104,12 +108,12 @@ body, .result-overlay, .loader {
   transition: opacity 0.5s;
   display: table;
 }
-/* line 90, styles.scss */
+/* line 94, styles.scss */
 .result-overlay.visible {
   opacity: 1;
   pointer-events: initial;
 }
-/* line 94, styles.scss */
+/* line 98, styles.scss */
 .result-overlay button {
   top: 0;
   right: 0;
@@ -122,7 +126,7 @@ body, .result-overlay, .loader {
   padding: 0 0.4em;
 }
 
-/* line 106, styles.scss */
+/* line 110, styles.scss */
 #result {
   display: table-cell;
   vertical-align: middle;
