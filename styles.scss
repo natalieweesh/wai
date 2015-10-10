@@ -1,0 +1,17 @@
+body, button {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+button {
+	width: 300px;
+	height: 300px;
+	border-radius: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -150px;
+	background: linear-gradient(red 80%, orange);
+	border: 0;
+}
