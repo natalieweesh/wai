@@ -23,8 +23,7 @@
 					$('.loader').addClass('visible');
 				} else {
 					x.innerHTML = "Geolocation is not supported by this browser.";
-					$('.loader').removeClass('visible');
-					$('.result-overlay').addClass('visible');
+					revealResult();
 				}
 			}
 			function showPosition(position) {
@@ -50,14 +49,12 @@
 						hood_names.push("Hood name not found!")
 					}
 					x.innerHTML = hood_names.join('/');
-					$('.loader').removeClass('visible');
-					$('.result-overlay').addClass('visible');
+					revealResult();
 				});
 			
 			}
 			function showError(error) {
-				$('.loader').removeClass('visible');
-				$('.result-overlay').addClass('visible');
+				revealResult();
 				switch(error.code) {
 					case error.PERMISSION_DENIED:
 						x.innerHTML = "User denied the request for Geolocation."
@@ -72,6 +69,10 @@
 						x.innerHTML = "An unknown error occurred."
 						break;
 				}
+			}
+			function revealResult() {
+				$('.loader').removeClass('visible');
+				$('.result-overlay').addClass('visible');
 			}
 		</script>
 	</body>
