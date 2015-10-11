@@ -46,6 +46,9 @@
 							hood_names.push(val['address_components'][0]['long_name']);
 						}
 					});
+					if (hood_names.length < 1) {
+						hood_names.push("Hood name not found!")
+					}
 					x.innerHTML = hood_names.join('/');
 					$('.loader').removeClass('visible');
 					$('.result-overlay').addClass('visible');
